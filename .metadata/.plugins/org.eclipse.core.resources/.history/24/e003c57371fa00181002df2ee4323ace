@@ -1,0 +1,11 @@
+package app;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Orders {
+	ArrayList<String, Car> transaction = new ArrayList<String, Car>();
+	HashMap<String, Car> orders = new HashMap<String, Car>();
+	
+	
+}

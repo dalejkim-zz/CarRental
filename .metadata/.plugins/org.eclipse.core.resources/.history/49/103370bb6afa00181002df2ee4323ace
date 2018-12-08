@@ -1,0 +1,20 @@
+package app;
+
+import java.util.HashMap;
+
+public class Customers {
+	private String UUID;
+	private HashMap<String, User> customerList = new HashMap<String, User>();
+	
+	public Customers(String UUID) {
+		this.UUID = UUID;
+	}
+	
+	public String getInfo() {
+		
+	}
+	
+	public void addInfo(String UUID) {
+		customerList.get(UUID);
+	}
+}

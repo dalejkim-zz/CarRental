@@ -1,0 +1,20 @@
+package app;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Orders {
+	private String startDate;
+	private String dueDate;
+	private Car carType;
+	private String UUID;
+	private HashMap<String, Orders> orders = new HashMap<String,Orders>();
+	
+	public Orders(String UUID, String startDate, String dueDate, Car carType) {
+		this.UUID = UUID;
+		this.startDate = startDate;
+		this.dueDate = dueDate;
+		this.carType = carType;
+	}
+	
+}

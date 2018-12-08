@@ -1,0 +1,14 @@
+package app;
+
+public class Customer {
+	private String UUID, email, firstName, lastName, driversLicense, password;
+
+	public String getUUID() {
+		return UUID;
+	}
+
+	public void setUUID(String uUID) {
+		UUID = uUID;
+	}
+	
+}

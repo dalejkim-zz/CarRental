@@ -1,0 +1,14 @@
+package app;
+
+public class Reservation {
+	private String UUID, location;
+	
+	public Reservation(String UUID, String location) {
+		this.UUID = UUID;
+		this.location = location;
+	}
+	
+	public void createCustomer() {
+		
+	}
+}

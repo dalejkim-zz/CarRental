@@ -1,0 +1,21 @@
+package app;
+
+public class RentalSystem {
+	private String UUID, location;
+	Customers
+	
+	public RentalSystem(String UUID, String location) {
+		this.UUID = UUID;
+		this.location = location;
+	}
+	
+	public void transaction() {
+		
+	}
+	
+	public void createCustomer(String UUID, String email, String firstName, String lastName, String driversLicense) {
+		User user = new User(UUID, email, firstName, lastName, driversLicense);
+		Customers.customerList
+	}
+	
+}

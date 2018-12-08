@@ -1,0 +1,27 @@
+package app;
+
+public class RentalSystem {
+	private String UUID, location;
+	Customers customers = new Customers();
+	RentalLocation rl = new RentalLocation(location);
+	double dailyPrice;
+	
+	public RentalSystem(String UUID, String location) {
+		this.UUID = UUID;
+		this.location = location;
+	}
+	
+	public void transaction(Car car) {
+		rl.removeCar(car);
+		dailyPrice = car.getDailyPrice();
+	}
+	
+	public void createCustomer(String UUID, String email, String firstName, String lastName, String driversLicense) {
+		User user = new User(UUID, email, firstName, lastName, driversLicense);
+		customers.addInfo(UUID, user);
+	}
+	
+	public void retrieveAvailableCars() {
+		rl.getAvailableCars();
+	}
+}

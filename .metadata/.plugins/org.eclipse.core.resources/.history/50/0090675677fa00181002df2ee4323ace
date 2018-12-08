@@ -1,0 +1,69 @@
+package app;
+
+import java.util.Scanner;
+import java.util.Calendar;
+
+public class Driver {
+	public static void main(String[] args) {
+		@SuppressWarnings("resource")
+		Scanner input = new Scanner(System.in);
+		System.out.println("Please enter your unique user id.");
+		String UUID = input.next();
+		System.out.println("Please enter your location you want to rent from.");
+		String location = input.next();
+		System.out.println("Thanks! Pulling up the available car list.");
+		
+		RentalSystem res = new RentalSystem(UUID, location);
+		Customers customers = new Customers();
+		
+		System.out.println("It appears you don't have a UUID, would you like to retry your UUID or create an account?");
+		System.out.println("'Yes' to retry or 'No' to create an account.");
+		
+		String str = input.next().toLowerCase().substring(0, 1);
+		
+		if(str.equals("y")) {
+			str = input.next();
+		} else if(str.equals("n")) {
+			System.out.println();
+			String id = input.next(); 
+			String email = input.next(); 
+			String firstName = input.next(); 
+			String lastName = input.next(); 
+			String driversLicense = input.next(); 
+			res.createCustomer(str, str, str, str, str);
+		}
+		
+		System.out.println("Pick your desired year:");
+		int year = Integer.valueOf(input.next());
+		System.out.println("Pick your desired month:");
+		int month = Integer.valueOf(input.next());
+		System.out.println("Pick your desired date:");
+		int date = Integer.valueOf(input.next());
+		System.out.println("Pick your desired hour:");
+		int hour = Integer.valueOf(input.next());
+		System.out.println("Pick your desired minute:");
+		int minute = Integer.valueOf(input.next());
+		
+		Calendar cal;
+		cal.set(year, month, date, hour, minute);
+		
+		System.out.println("How many days would you like this car for?");
+		int days = Integer.valueOf(input.next());
+		
+		System.out.println("Currently we have these types of cars available" + res.retrieveAvailableCars());
+		System.out.println("What car type would you like?");
+		String carType = input.next().toLowerCase();
+		Car car;
+		
+		if(carType == "small") {
+			car = Car.SMALL;
+		} else if(carType == "medium") {
+			car = Car.MEDIUM;
+		} else if(carType == "large") {
+			car = Car.LARGE;
+		}
+		
+		System.out.println("This will cost you:");
+		res.transaction(car, cal, days);
+	}
+}

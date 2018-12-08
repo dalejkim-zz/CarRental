@@ -1,0 +1,40 @@
+package app;
+
+import java.util.List;
+
+public class Customer {
+	private String UUID, email, firstName, lastName, driversLicense;
+	private List<Customer> users = new List<Customer>();
+
+	public Customer(String UUID, String email, String firstName, String lastName, String driversLicense) {
+		this.UUID = UUID;
+		this.email = email;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.driversLicense = driversLicense;
+	}
+	
+	public void setInfo() {
+		
+	}
+	
+	public String getUUID() {
+		return UUID;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public String getDriversLicense() {
+		return driversLicense;
+	}
+}

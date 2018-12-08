@@ -1,0 +1,13 @@
+package app;
+
+public class Customer {
+	private String UUID;
+	
+	public Customer(String UUID) {
+		this.UUID = UUID;
+	}
+	
+	public String getInfo() {
+		
+	}
+}

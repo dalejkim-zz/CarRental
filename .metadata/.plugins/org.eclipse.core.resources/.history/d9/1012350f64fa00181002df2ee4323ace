@@ -1,0 +1,14 @@
+package app;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class RentalLocation {
+	private String location;
+	private List<Car> availableCars = new ArrayList<Car>();
+	
+	public RentalLocation(String location, List<Car> availableCars) {
+		this.location = location;
+		this.availableCars = availableCars;
+	}
+}

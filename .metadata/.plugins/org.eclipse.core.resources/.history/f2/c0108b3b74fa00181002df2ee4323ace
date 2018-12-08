@@ -1,0 +1,30 @@
+package app;
+
+import java.util.Calendar;
+
+public class RentalSystem {
+	private String UUID, location;
+	Customers customers = new Customers();
+	RentalLocation rl = new RentalLocation(location);
+	double dailyPrice;
+	Calendar cal = Calendar.getInstance();
+	
+	public RentalSystem(String UUID, String location) {
+		this.UUID = UUID;
+		this.location = location;
+	}
+	
+	public void transaction(Car car, int days) {
+		dailyPrice = car.getDailyPrice() * days;
+		rl.removeCar(car);
+	}
+	
+	public void createCustomer(String UUID, String email, String firstName, String lastName, String driversLicense) {
+		User user = new User(UUID, email, firstName, lastName, driversLicense);
+		customers.addInfo(UUID, user);
+	}
+	
+	public void retrieveAvailableCars() {
+		rl.getAvailableCars();
+	}
+}

@@ -1,0 +1,12 @@
+1544214832550	Rename type 'User'
+1544214946629	Encapsulate field 'UUID'
+1544214951666	Encapsulate field 'email'
+1544214954862	Encapsulate field 'firstName'
+1544214957841	Encapsulate field 'lastName'
+1544214962335	Encapsulate field 'driversLicense'
+1544214965121	Encapsulate field 'password'
+1544215360698	Delete element
+1544218252379	Rename type 'Customer'
+1544219367553	Rename type 'Customer'
+1544224066818	Rename local variable 'sc'
+1544226544551	Delete element

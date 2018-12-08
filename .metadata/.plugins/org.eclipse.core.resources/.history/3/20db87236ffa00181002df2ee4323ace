@@ -1,0 +1,33 @@
+package app;
+
+public class RentalSystem {
+	private String UUID, location;
+	Customers customers = new Customers();
+	RentalLocation rl = new RentalLocation(location);
+	double dailyPrice;
+	
+	public RentalSystem(String UUID, String location) {
+		this.UUID = UUID;
+		this.location = location;
+	}
+	
+	public void transaction(Car car) {
+		rl.removeCar(car);
+		if(car == Car.SMALL) {
+			dailyPrice = 45.0;
+		} else if(car == Car.MEDIUM) {
+			dailyPrice = 60.0;
+		} else if(car == Car.LARGE) {
+			dailyPrice = 75.0;
+		}
+	}
+	
+	public void createCustomer(String UUID, String email, String firstName, String lastName, String driversLicense) {
+		User user = new User(UUID, email, firstName, lastName, driversLicense);
+		customers.addInfo(UUID, user);
+	}
+	
+	public void retrieveAvailableCars() {
+		rl.getAvailableCars();
+	}
+}

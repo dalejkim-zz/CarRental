@@ -1,0 +1,14 @@
+package app;
+
+public class RentalSystem {
+	private String UUID, location;
+	
+	public RentalSystem(String UUID, String location) {
+		this.UUID = UUID;
+		this.location = location;
+	}
+	
+	public void createCustomer() {
+		
+	}
+}

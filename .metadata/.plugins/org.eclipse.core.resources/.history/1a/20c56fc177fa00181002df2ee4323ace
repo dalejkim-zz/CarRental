@@ -1,0 +1,36 @@
+package app;
+
+import java.util.Calendar;
+import java.util.HashMap;
+
+public class RentalSystem {
+	private String UUID, location;
+	Customers customers = new Customers();
+	RentalLocation rl = new RentalLocation(location);
+	double dailyPrice;
+	
+	public RentalSystem(String UUID, String location) {
+		this.UUID = UUID;
+		this.location = location;
+	}
+	
+	public double transaction(Car car, Calendar cal, int days) {
+		Orders orders = new Orders(UUID, cal, cal, car);
+		dailyPrice = car.getDailyPrice() * days;
+		rl.removeCar(car);
+		return dailyPrice;
+	}
+	
+	public void createCustomer(String UUID, String email, String firstName, String lastName, String driversLicense) {
+		User user = new User(UUID, email, firstName, lastName, driversLicense);
+		customers.addInfo(UUID, user);
+	}
+	
+	public HashMap<Car, Integer> retrieveAvailableCars() {
+		return rl.getAvailableCars();
+	}
+	
+	public String getUUID() {
+		return UUID;
+	}
+}

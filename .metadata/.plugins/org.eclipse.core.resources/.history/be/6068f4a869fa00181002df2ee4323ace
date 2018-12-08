@@ -1,0 +1,44 @@
+package app;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+public class RentalLocation {
+	private String location;
+	private HashMap<Car, Integer> availableCars = new HashMap<Car, Integer>();
+	
+	public RentalLocation(String location, List<Car> availableCars) {
+		this.location = location;
+		this.availableCars = availableCars;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public HashMap<Car, Integer> getAvailableCars() {
+		return availableCars;
+	}
+
+	public void setAvailableCars(HashMap<Car, Integer> availableCars) {
+		this.availableCars = availableCars;
+	}
+	
+	public void addCar(Car car) {
+		Integer count = availableCars.get(car);
+		if(count != null || count != 0) {
+			availableCars.put(car, count++);
+		} else {
+			availableCars.putAll(car, 1);
+		}
+	}
+	
+	public void removeCar(Car car) {
+		availableCars.remove(car);
+	}
+}
